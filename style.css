@@ -72,7 +72,7 @@ a {
     
 }
 
-p a {
+p a, li a {
     border-bottom: 2px dotted #0066cc;
 }
 
@@ -130,13 +130,15 @@ li {
 .full-image {
     max-width: 100%;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .full-image img {
     width: 100%;
     height: auto;
-    max-height: 90vh;
-    object-fit: contain;
+    max-height: none;
+    object-fit: cover;
+    cursor: zoom-in;
 }
 
 .image-caption {
@@ -253,12 +255,43 @@ footer a:hover {
     line-height: 1.4;
 }
 
+.highlight-block p {
+    margin-bottom: 0;
+    text-indent: 20px;
+    text-align: justify;
+    line-height: 1.2em;
+}
+
 .highlight-block h1,
 .highlight-block h2,
 .highlight-block h3 {
     font-family: "Times New Roman", Times, serif;
     margin-bottom: 1rem;
-    line-height: 1.2;
+    line-height: 2rem;
 }
 
+.highlight-block h3 {
+    line-height: normal;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.poem-block {
+    background-color: #f9f9f9; /* Light background */
+    border-left: 4px solid #ccc; /* Left border */
+    padding: 10px 15px; /* Padding */
+    margin: 20px 0; /* Margin */
+    font-style: italic; /* Italic text */
+    line-height: 1.6; /* Line height for readability */
+}
+
+.poem-block p {
+    margin: 0;
+    margin-left: 2rem;
+    font-family: 'Brush Script MT';
+    font-style: normal;
+    font-size: 1.5rem;
+    margin-bottom: -0.5rem;
+}
 
