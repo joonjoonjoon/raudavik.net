@@ -1,8 +1,0 @@
-# Node modules
-node_modules
-
-# DS Store
-.DS_store
-
-# Eleventy cached API results
-.cache
