@@ -37,11 +37,7 @@
         </div>
         
         <div class="full-image">
-          <img src="/img/images/raufarhofn/1962eftir-soltun-7-1720.jpeg" 
-               alt="1962eftir söltun 7"
-               class="zoomable-image"
-               loading="lazy"
-               onload="updateImageDimensions(this)">
+          <img src="/img/images/raufarhofn/1962eftir-soltun-7-1080.jpeg" alt="1962eftir söltun 7" loading="lazy" decoding="async" width="1720" height="1140" srcset="/img/images/raufarhofn/1962eftir-soltun-7-1080.jpeg 1080w, /img/images/raufarhofn/1962eftir-soltun-7-1720.jpeg 1720w" sizes="auto">
           <p class="image-dimensions"></p>
         </div>
         
@@ -180,11 +176,22 @@
         <script>
         function updateImageDimensions(img) {
           const dimensions = document.querySelector('.image-dimensions');
-          dimensions.textContent = `${img.naturalWidth} × ${img.naturalHeight} pixels`;
+          dimensions.textContent = `${img.naturalWidth} × ${img.naturalHeight}`;
         }
         
         document.addEventListener('DOMContentLoaded', function() {
           const fullImage = document.querySelector('.full-image');
+          const mainImage = fullImage.querySelector('img');  // Find the image inside full-image
+          if (mainImage) {
+            if (mainImage.complete) {
+              // Image is already loaded (from cache)
+              updateImageDimensions(mainImage);
+            } else {
+              // Wait for image to load
+              mainImage.addEventListener('load', () => updateImageDimensions(mainImage));
+            }
+          }
+        
           const overlay = document.querySelector('.fullscreen-overlay');
           const closeButton = document.querySelector('.close-button');
           const fullscreenImage = document.querySelector('.fullscreen-image');

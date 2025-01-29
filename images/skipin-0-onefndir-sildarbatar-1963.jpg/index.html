@@ -36,11 +36,7 @@
         </div>
         
         <div class="full-image">
-          <img src="/img/images/skipin/0-onefndir-sildarbatar-1963-1489.jpeg" 
-               alt="0 Ónefndir síldarbátar 1963"
-               class="zoomable-image"
-               loading="lazy"
-               onload="updateImageDimensions(this)">
+          <img src="/img/images/skipin/0-onefndir-sildarbatar-1963-1080.jpeg" alt="0 Ónefndir síldarbátar 1963" loading="lazy" decoding="async" width="1489" height="1402" srcset="/img/images/skipin/0-onefndir-sildarbatar-1963-1080.jpeg 1080w, /img/images/skipin/0-onefndir-sildarbatar-1963-1489.jpeg 1489w" sizes="auto">
           <p class="image-dimensions"></p>
         </div>
         
@@ -178,11 +174,22 @@
         <script>
         function updateImageDimensions(img) {
           const dimensions = document.querySelector('.image-dimensions');
-          dimensions.textContent = `${img.naturalWidth} × ${img.naturalHeight} pixels`;
+          dimensions.textContent = `${img.naturalWidth} × ${img.naturalHeight}`;
         }
         
         document.addEventListener('DOMContentLoaded', function() {
           const fullImage = document.querySelector('.full-image');
+          const mainImage = fullImage.querySelector('img');  // Find the image inside full-image
+          if (mainImage) {
+            if (mainImage.complete) {
+              // Image is already loaded (from cache)
+              updateImageDimensions(mainImage);
+            } else {
+              // Wait for image to load
+              mainImage.addEventListener('load', () => updateImageDimensions(mainImage));
+            }
+          }
+        
           const overlay = document.querySelector('.fullscreen-overlay');
           const closeButton = document.querySelector('.close-button');
           const fullscreenImage = document.querySelector('.fullscreen-image');
