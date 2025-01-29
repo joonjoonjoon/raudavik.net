@@ -127,6 +127,10 @@ li {
     transform: scale(1.05);
 }
 
+.gallery-link {
+    text-transform: capitalize;
+}
+
 .full-image {
     max-width: 100%;
     margin: 0 auto;
