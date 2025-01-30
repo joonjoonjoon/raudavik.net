@@ -38,7 +38,6 @@
         
         <div class="full-image">
           <img src="/img/images/akraborg/1973-sidast-a-skaki-vid-langanes-1080.jpeg" alt="1973. Síðast á skaki við Langanesið. Landað á Seyðó frá 1971 og í nokkur ár" loading="lazy" decoding="async" width="1720" height="1112" srcset="/img/images/akraborg/1973-sidast-a-skaki-vid-langanes-1080.jpeg 1080w, /img/images/akraborg/1973-sidast-a-skaki-vid-langanes-1720.jpeg 1720w" sizes="auto">
-          <p class="image-dimensions"></p>
         </div>
         
         <div class="fullscreen-overlay">
@@ -174,23 +173,10 @@
         </style>
         
         <script>
-        function updateImageDimensions(img) {
-          const dimensions = document.querySelector('.image-dimensions');
-          dimensions.textContent = `${img.naturalWidth} × ${img.naturalHeight}`;
-        }
         
         document.addEventListener('DOMContentLoaded', function() {
           const fullImage = document.querySelector('.full-image');
           const mainImage = fullImage.querySelector('img');  // Find the image inside full-image
-          if (mainImage) {
-            if (mainImage.complete) {
-              // Image is already loaded (from cache)
-              updateImageDimensions(mainImage);
-            } else {
-              // Wait for image to load
-              mainImage.addEventListener('load', () => updateImageDimensions(mainImage));
-            }
-          }
         
           const overlay = document.querySelector('.fullscreen-overlay');
           const closeButton = document.querySelector('.close-button');

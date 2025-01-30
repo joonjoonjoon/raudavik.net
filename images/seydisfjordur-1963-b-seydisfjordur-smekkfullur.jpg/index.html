@@ -38,7 +38,6 @@
         
         <div class="full-image">
           <img src="/img/images/seydisfjordur/1963-b-seydisfjordur-smekkfullur-1080.jpeg" alt="1963 b Seyðisfjörður smekkfullur af síldarbátum, íslenskum og norskum (vþh)" loading="lazy" decoding="async" width="2160" height="871" srcset="/img/images/seydisfjordur/1963-b-seydisfjordur-smekkfullur-1080.jpeg 1080w, /img/images/seydisfjordur/1963-b-seydisfjordur-smekkfullur-2160.jpeg 2160w" sizes="auto">
-          <p class="image-dimensions"></p>
         </div>
         
         <div class="fullscreen-overlay">
@@ -174,23 +173,10 @@
         </style>
         
         <script>
-        function updateImageDimensions(img) {
-          const dimensions = document.querySelector('.image-dimensions');
-          dimensions.textContent = `${img.naturalWidth} × ${img.naturalHeight}`;
-        }
         
         document.addEventListener('DOMContentLoaded', function() {
           const fullImage = document.querySelector('.full-image');
           const mainImage = fullImage.querySelector('img');  // Find the image inside full-image
-          if (mainImage) {
-            if (mainImage.complete) {
-              // Image is already loaded (from cache)
-              updateImageDimensions(mainImage);
-            } else {
-              // Wait for image to load
-              mainImage.addEventListener('load', () => updateImageDimensions(mainImage));
-            }
-          }
         
           const overlay = document.querySelector('.fullscreen-overlay');
           const closeButton = document.querySelector('.close-button');
