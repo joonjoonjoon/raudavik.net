@@ -18,13 +18,25 @@
     </header>
     <main>
         
-        <h1>Smá hvíld</h1>
+        <div class="header-container">
+          <a href="/skipin/gardar/" class="nav-button up" title="Aftur á síðuna">↑</a>
+          <h1>📁 Garðar EA 761 myndir</h1>
+        </div>
         
+        <div class="image-navigation">
+          <div class="nav-spacer"><a href="/images/gardar_18/" class="nav-button prev" data-nav="prev" title="Fyrri mynd">←</a></div>
+        
+          <p class="caption">Smá hvíld</p>
          
-        <div class="image-navigation"><a href="/images/gardar_18/" class="nav-button prev" data-nav="prev">←</a><a href="/" class="gallery-link">↑ skipin/gardar</a><a href="/images/gardar_20/" class="nav-button next" data-nav="next">→</a></div>
+          <div class="nav-spacer"><a href="/images/gardar_20/" class="nav-button next" data-nav="next" title="Næsta mynd">→</a></div>
+        </div>
         
         <div class="full-image">
           <img src="/images/gardar/sma-hvild-1080.jpeg" alt="Smá hvíld" loading="lazy" decoding="async" width="1833" height="1187" srcset="/images/gardar/sma-hvild-1080.jpeg 1080w, /images/gardar/sma-hvild-1833.jpeg 1833w" sizes="auto">
+        </div>
+        
+        <div class="image-metadata">
+          <ul><li>ID: gardar_19</li></ul>
         </div>
         
         <div class="fullscreen-overlay">
@@ -169,6 +181,80 @@
           font-size: 1.1em;
           padding: 10px;
           background-color: #00000066;
+        }
+        
+        .image-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-top: 1px solid #eee;
+        }
+        
+        .nav-spacer {
+            width: 60px; /* Adjust this value based on your nav button width */
+            flex-shrink: 0;
+            display: flex;
+        }
+        
+        .caption {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0;
+            padding: 0 1rem;
+        }
+        
+        .nav-button {
+            padding: 0.5rem 1rem;
+            background: #f5f5f5;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .nav-button:hover {
+            background: #e5e5e5;
+            text-decoration: none;
+        }
+        
+        .nav-button.prev {
+            margin-right: auto;
+        }
+        
+        .nav-button.next {
+            margin-left: auto;
+        }
+        
+        .image-metadata {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .image-metadata ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .image-metadata li {
+            margin-bottom: 0;
+            color: #666;
+        }
+        
+        .header-container {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1rem;
+        }
+        
+        .header-container h1 {
+          margin: 0;
+        }
+        
+        .nav-button.up {
+          flex-shrink: 0;
         }
         </style>
         
