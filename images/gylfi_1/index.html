@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1) Gylfi í smíðum á Akureyri - Raudavik.net</title>
+    <title> Gylfi í smíðum á Akureyri (1) - Raudavik.net</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="/favicon.png" type="image/x-icon">
 </head>
@@ -24,15 +24,25 @@
         </div>
         
         <div class="image-navigation">
-          <div class="nav-spacer"></div>
+          <div class="nav-spacer">
+            <a href="#" 
+               class="nav-button prev disabled" 
+               data-nav="prev" 
+               title="Fyrri mynd"aria-disabled="true">←</a>
+          </div>
         
-          <p class="caption">1) Gylfi í smíðum á Akureyri</p>
+          <p class="caption"> Gylfi í smíðum á Akureyri (1)</p>
          
-          <div class="nav-spacer"><a href="/images/gylfi_2/" class="nav-button next" data-nav="next" title="Næsta mynd">→</a></div>
+          <div class="nav-spacer">
+            <a href="/images/gylfi_2/" 
+               class="nav-button next " 
+               data-nav="next" 
+               title="Næsta mynd">→</a>
+          </div>
         </div>
         
         <div class="full-image">
-          <img src="/images/gylfi/1-gylfi-i-smidum-a-akureyri-1080.jpeg" alt="1) Gylfi í smíðum á Akureyri" loading="lazy" decoding="async" width="2160" height="1319" srcset="/images/gylfi/1-gylfi-i-smidum-a-akureyri-1080.jpeg 1080w, /images/gylfi/1-gylfi-i-smidum-a-akureyri-2160.jpeg 2160w" sizes="auto">
+          <img src="/images/gylfi/1-gylfi-i-smidum-a-akureyri-1080.jpeg" alt=" Gylfi í smíðum á Akureyri (1)" loading="lazy" decoding="async" width="2160" height="1319" srcset="/images/gylfi/1-gylfi-i-smidum-a-akureyri-1080.jpeg 1080w, /images/gylfi/1-gylfi-i-smidum-a-akureyri-2160.jpeg 2160w" sizes="auto">
         </div>
         
         <div class="image-metadata">
@@ -42,9 +52,9 @@
         <div class="fullscreen-overlay">
           <div class="fullscreen-image-container ">
             <img src="/images/gylfi/1-gylfi-i-smidum-a-akureyri-2160.jpeg" 
-                 alt="1) Gylfi í smíðum á Akureyri"
+                 alt=" Gylfi í smíðum á Akureyri (1)"
                  class="fullscreen-image">
-          </div><a href="/images/gylfi_2/" class="nav-button next overlay-nav" data-nav="next">→</a><button class="close-button">×</button><div class="overlay-caption">1) Gylfi í smíðum á Akureyri</div></div>
+          </div><a href="/images/gylfi_2/" class="nav-button next overlay-nav" data-nav="next">→</a><button class="close-button">×</button><div class="overlay-caption"> Gylfi í smíðum á Akureyri (1)</div></div>
         
         <style>
         .full-image {
@@ -210,11 +220,18 @@
             border-radius: 4px;
             text-decoration: none;
             color: #333;
+            transition: opacity 0.2s, background-color 0.2s;
         }
         
-        .nav-button:hover {
+        .nav-button:hover:not(.disabled) {
             background: #e5e5e5;
             text-decoration: none;
+        }
+        
+        .nav-button.disabled {
+            opacity: 0.3;
+            cursor: default;
+            pointer-events: none;
         }
         
         .nav-button.prev {
@@ -255,6 +272,12 @@
         
         .nav-button.up {
           flex-shrink: 0;
+        }
+        
+        .photo-index {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.9em;
         }
         </style>
         

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1967 u.þ.b 2 - Raudavik.net</title>
+    <title>1967 u.þ.b. - Raudavik.net</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="/favicon.png" type="image/x-icon">
 </head>
@@ -24,15 +24,25 @@
         </div>
         
         <div class="image-navigation">
-          <div class="nav-spacer"><a href="/images/raufarhofn_68/" class="nav-button prev" data-nav="prev" title="Fyrri mynd">←</a></div>
+          <div class="nav-spacer">
+            <a href="/images/raufarhofn_68/" 
+               class="nav-button prev " 
+               data-nav="prev" 
+               title="Fyrri mynd">←</a>
+          </div>
         
-          <p class="caption">1967 u.þ.b 2</p>
+          <p class="caption">1967 u.þ.b.</p>
          
-          <div class="nav-spacer"><a href="/images/raufarhofn_70/" class="nav-button next" data-nav="next" title="Næsta mynd">→</a></div>
+          <div class="nav-spacer">
+            <a href="/images/raufarhofn_70/" 
+               class="nav-button next " 
+               data-nav="next" 
+               title="Næsta mynd">→</a>
+          </div>
         </div>
         
         <div class="full-image">
-          <img src="/images/raufarhofn/1967-u-th-b-2-1080.jpeg" alt="1967 u.þ.b 2" loading="lazy" decoding="async" width="1684" height="1129" srcset="/images/raufarhofn/1967-u-th-b-2-1080.jpeg 1080w, /images/raufarhofn/1967-u-th-b-2-1684.jpeg 1684w" sizes="auto">
+          <img src="/images/raufarhofn/1967-u-th-b-2-1080.jpeg" alt="1967 u.þ.b." loading="lazy" decoding="async" width="1684" height="1129" srcset="/images/raufarhofn/1967-u-th-b-2-1080.jpeg 1080w, /images/raufarhofn/1967-u-th-b-2-1684.jpeg 1684w" sizes="auto">
         </div>
         
         <div class="image-metadata">
@@ -42,9 +52,9 @@
         <div class="fullscreen-overlay">
           <div class="fullscreen-image-container ">
             <img src="/images/raufarhofn/1967-u-th-b-2-1684.jpeg" 
-                 alt="1967 u.þ.b 2"
+                 alt="1967 u.þ.b."
                  class="fullscreen-image">
-          </div><a href="/images/raufarhofn_68/" class="nav-button prev overlay-nav" data-nav="prev">←</a><a href="/images/raufarhofn_70/" class="nav-button next overlay-nav" data-nav="next">→</a><button class="close-button">×</button><div class="overlay-caption">1967 u.þ.b 2</div></div>
+          </div><a href="/images/raufarhofn_68/" class="nav-button prev overlay-nav" data-nav="prev">←</a><a href="/images/raufarhofn_70/" class="nav-button next overlay-nav" data-nav="next">→</a><button class="close-button">×</button><div class="overlay-caption">1967 u.þ.b.</div></div>
         
         <style>
         .full-image {
@@ -210,11 +220,18 @@
             border-radius: 4px;
             text-decoration: none;
             color: #333;
+            transition: opacity 0.2s, background-color 0.2s;
         }
         
-        .nav-button:hover {
+        .nav-button:hover:not(.disabled) {
             background: #e5e5e5;
             text-decoration: none;
+        }
+        
+        .nav-button.disabled {
+            opacity: 0.3;
+            cursor: default;
+            pointer-events: none;
         }
         
         .nav-button.prev {
@@ -255,6 +272,12 @@
         
         .nav-button.up {
           flex-shrink: 0;
+        }
+        
+        .photo-index {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.9em;
         }
         </style>
         
