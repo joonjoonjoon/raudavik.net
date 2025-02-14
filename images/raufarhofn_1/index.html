@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1958, verbúðin (Svarti braggi) á sundi - Raudavik.net</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <a href="/">
+            <h1>Raudavik.net</h1>
+        
+        </a>
+        <h2 class="subtitle">Útgerð og síldarsöltun Valtýs Þorsteinssonar og Hreiðars Valtýssonar</h2>
+        <nav>
+            <a href="/skipin/" class="nav-link ">Skipin</a>
+            <a href="/sild/" class="nav-link ">Síldarsöltun</a>
+            <a href="/um/" class="nav-link ">Um</a>
+        </nav>
+    </header>
+    <main>
+        
+        <div class="header-container">
+          <a href="/sild/raufarhofn/" class="nav-button up" title="Aftur á síðuna">↑</a>
+          <h1>📁 Raufarhöfn myndir</h1>
+        </div>
+        
+        <div class="image-navigation">
+          <div class="nav-spacer">
+            <a href="#" 
+               class="nav-button prev disabled" 
+               data-nav="prev" 
+               title="Fyrri mynd"aria-disabled="true">←</a>
+          </div>
+        
+          <p class="caption">1958, verbúðin (Svarti braggi) á sundi</p>
+         
+          <div class="nav-spacer">
+            <a href="/images/raufarhofn_2/" 
+               class="nav-button next " 
+               data-nav="next" 
+               title="Næsta mynd">→</a>
+          </div>
+        </div>
+        
+        <div class="full-image">
+          <img src="/images/raufarhofn/1958-verbudin-svarti-braggi-a-su-1080.jpeg" alt="1958, verbúðin (Svarti braggi) á sundi" loading="lazy" decoding="async" width="2160" height="1613" srcset="/images/raufarhofn/1958-verbudin-svarti-braggi-a-su-1080.jpeg 1080w, /images/raufarhofn/1958-verbudin-svarti-braggi-a-su-2160.jpeg 2160w" sizes="auto">
+        </div>
+        
+        <div class="image-metadata">
+          <ul><li>Dagsetningu: 1958</li><li>ID: raufarhofn_1</li></ul>
+        </div>
+        
+        <div class="fullscreen-overlay">
+          <div class="fullscreen-image-container ">
+            <img src="/images/raufarhofn/1958-verbudin-svarti-braggi-a-su-2160.jpeg" 
+                 alt="1958, verbúðin (Svarti braggi) á sundi"
+                 class="fullscreen-image">
+          </div><a href="/images/raufarhofn_2/" class="nav-button next overlay-nav" data-nav="next">→</a><button class="close-button">×</button><div class="overlay-caption">1958, verbúðin (Svarti braggi) á sundi</div></div>
+        
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const fullImage = document.querySelector('.full-image');
+          const mainImage = fullImage.querySelector('img');  // Find the image inside full-image
+        
+          const overlay = document.querySelector('.fullscreen-overlay');
+          const closeButton = document.querySelector('.close-button');
+          const fullscreenImage = document.querySelector('.fullscreen-image');
+          const navButtons = document.querySelectorAll('.nav-button');
+          const prevButton = document.querySelector('.nav-button.prev');
+          const nextButton = document.querySelector('.nav-button.next');
+        
+          // Check URL parameters for zoom state
+          const urlParams = new URLSearchParams(window.location.search);
+          if (urlParams.get('zoom') === 'true') {
+            showOverlay();
+          }
+        
+          fullImage.addEventListener('click', function() {
+            showOverlay();
+          });
+        
+          fullscreenImage.addEventListener('click', function(e) {
+            if (e.target === fullscreenImage) {
+              closeOverlay();
+            }
+          });
+        
+          closeButton.addEventListener('click', closeOverlay);
+        
+          // Handle navigation clicks
+          navButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+              if (overlay.style.display === 'block') {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                window.location.href = href + '?zoom=true';
+              }
+            });
+          });
+        
+          // Handle keyboard navigation
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+              closeOverlay();
+            } else if (e.key === 'ArrowLeft' && prevButton) {
+              e.preventDefault();
+              const href = prevButton.getAttribute('href');
+              if (overlay.style.display === 'block') {
+                window.location.href = href + '?zoom=true';
+              } else {
+                window.location.href = href;
+              }
+            } else if (e.key === 'ArrowRight' && nextButton) {
+              e.preventDefault();
+              const href = nextButton.getAttribute('href');
+              if (overlay.style.display === 'block') {
+                window.location.href = href + '?zoom=true';
+              } else {
+                window.location.href = href;
+              }
+            }
+          });
+        
+          function showOverlay() {
+            overlay.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            // Update URL without reloading the page
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('zoom', 'true');
+            window.history.pushState({}, '', newUrl);
+          }
+        
+          function closeOverlay() {
+            overlay.style.display = 'none';
+            document.body.style.overflow = '';
+            // Remove zoom parameter from URL
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.delete('zoom');
+            window.history.pushState({}, '', newUrl);
+          }
+        });
+        </script>
+        
+        
+        <br>
+        <br>
+        <div class="breadcrumb"><a href="/">home</a>&nbsp> <a href="/images/">images</a>&nbsp> <a href="/images/raufarhofn_1/">raufarhofn_1</a></div>
+        
+    </main>
+    <footer>
+        <p>Raudavik.net</p>
+    </footer>
+</body>
+</html>
